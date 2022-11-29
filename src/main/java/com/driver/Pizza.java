@@ -5,13 +5,17 @@ public class Pizza {
     private int price;
     private Boolean isVeg;
     private String bill;
-    public Boolean cheese = false ;
-    public Boolean topping =false ;
-    public Boolean carrybag = false ;
-    private Boolean billGenerated = false ;
+    private Boolean cheese ;
+    private Boolean topping;
+    private Boolean carrybag ;
+    private Boolean billGenerated;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
+        cheese = false ;
+        topping =false ;
+        carrybag = false ;
+        billGenerated = false ;
 
         if(this.isVeg==true)
         {
