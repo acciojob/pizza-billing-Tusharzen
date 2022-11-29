@@ -8,7 +8,7 @@ public class Pizza {
     public Boolean cheese = false ;
     public Boolean topping =false ;
     public Boolean carrybag = false ;
-
+    private Boolean billGenerated = false ;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -55,19 +55,23 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-        if(cheese==true)
-        bill += "Extra Cheese Added: 80\n" ;
+        if(billGenerated==false)
+        {
+            billGenerated = true ;
+            if(cheese==true)
+            bill += "Extra Cheese Added: 80\n" ;
 
-        if(topping == true && isVeg==true)
-        bill+= "Extra Toppings Added: 70\n";
+            if(topping == true && isVeg==true)
+            bill+= "Extra Toppings Added: 70\n";
 
-        if(topping==true && isVeg==false)
-        bill+= "Extra Toppings Added: 120\n";
+            if(topping==true && isVeg==false)
+            bill+= "Extra Toppings Added: 120\n";
 
-        if(carrybag==true)
-        bill+= "Paperbag Added: 20\n";
+            if(carrybag==true)
+            bill+= "Paperbag Added: 20\n";
         
-        bill+= "Total Price: "+price ;
+            bill+= "Total Price: "+price ;
+        }
 
         return this.bill;
     }
